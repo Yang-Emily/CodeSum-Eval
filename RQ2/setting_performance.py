@@ -12,13 +12,12 @@ openai.api_key = 'your openai key'
 def evaluate(model, reference, nshot):
 
     df_score = pd.read_excel('../../dataset/human_evaluation/RQ1-2/human_evaluation.xlsx')
-    # 对每个评分标准单独进行过滤
+    
     coh_example = df_score[df_score['Coherence'].apply(lambda x: x.is_integer())].groupby('Coherence').head(nshot)
     con_example = df_score[df_score['Consistency'].apply(lambda x: x.is_integer())].groupby('Consistency').head(nshot)
     flu_example = df_score[df_score['Fluency'].apply(lambda x: x.is_integer())].groupby('Fluency').head(nshot)
     ref_example = df_score[df_score['Relevance'].apply(lambda x: x.is_integer())].groupby('Relevance').head(nshot)
 
-    # 构建角色和评估标准
     criteria = {
         "Coherence": "The summary should exhibit clear structural organization, progressing logically from sentence "
                      "to sentence to form a coherent body of information about the topic.",
