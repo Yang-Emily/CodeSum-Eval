@@ -7,7 +7,7 @@ openai.api_key = "your api key"
 
 
 def evaluate(model, reference):
-    # 构建角色和评估标准
+    # Construct roles and evaluation criteria
     roles = {
         "Code Reviewer": "As a Code Reviewer, serving as an experienced developer, ",
         "Original Code Author": "As the Original Code Author, having written the code, ",
@@ -264,7 +264,7 @@ def evaluate(model, reference):
                'Evaluation Form (scores ONLY): '
                '- Relevance: 3',
     }
-    # 结合数据
+    # Combining data
     df = pd.read_excel('../dataset/RQ1-2/final/recode.xlsx')
 
     # Define the columns for the results DataFrame
