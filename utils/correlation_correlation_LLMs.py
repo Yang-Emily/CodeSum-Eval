@@ -115,23 +115,10 @@ if __name__ == '__main__':
             diff_score = diff_score_raw.iloc[:, diff_score_raw.shape[1]-(i+1+j*4):diff_score_raw.shape[1]-(i+1+j*4)+1]
             name = diff_score_raw.columns[diff_score_raw.shape[1]-(i+1+j*4)]
             print(name)
-            # human1 = human_annotation["volunteer1"].tolist()
-            # human2 = human_annotation["volunteer2"].tolist()
-            # human3 = human_annotation["volunteer3"].tolist()
-            # human4 = human_annotation["volunteer4"].tolist()
-            # human5 = human_annotation["volunteer5"].tolist()
-            # human_avg = (np.array(human1) + np.array(human2) + np.array(human3) + np.array(human4) + np.array(human5)) / 3
-            # human_avg = human_annotation["语义相似度"].tolist()
-            # human_avg = human_annotation["连贯性"].tolist()
-            # human_avg = human_annotation["一致性"].tolist()
-            # 假设 i 是您要使用的索引
-            # 这将选择一个列，然后将其转换为列表
             human_avg = human_annotation.iloc[:,
                         human_annotation.shape[1] - (i+1):human_annotation.shape[1] - (i+1) + 1].squeeze().tolist()
             name = human_annotation.columns[human_annotation.shape[1]-(i+1)]
             print(name)
-            # human_avg = human_annotation["相关性"].tolist()
-            # human_avg = human_annotation["total"].tolist()
             human_avg = list(human_avg)
             for aggregrate_way in aggregrate_ways:
                 # print(100 * "*")
