@@ -13,7 +13,6 @@ openai.api_key = 'your openai key'
 
 
 def evaluate(refs, preds, num, model, reference, turn, approach):
-    # 构建角色和评估标准
 
     criteria = {
         "Coherence": "The summary should exhibit clear structural organization, progressing logically from sentence "
@@ -424,7 +423,7 @@ def evaluate(refs, preds, num, model, reference, turn, approach):
             'Ref': 'Evaluation Form (scores ONLY):',
 
         }
-    # 结合数据
+
     df = pd.DataFrame(preds, columns=['Generated'])
     df = pd.concat([refs, df], axis=1)
     df = df.head(num)
