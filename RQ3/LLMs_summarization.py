@@ -9,9 +9,7 @@ openai.api_key = 'your openai key'
 
 
 def generate(num, model):
-    # 构建角色和评估标准
 
-    # 结合数据
     df = pd.read_excel('../../dataset/RQ3/final/code.xlsx').iloc[:num]
     # Define the columns for the results DataFrame
     columns = ['Code']
