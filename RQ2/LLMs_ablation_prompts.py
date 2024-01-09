@@ -921,7 +921,6 @@ def evaluate(model, cot, rating_form, reference):
                    '- Relevance: 3',
         }
 
-    # 结合数据
     df = pd.read_excel('../../dataset/RQ1-2/final/recode.xlsx')
 
     # Define the columns for the results DataFrame
